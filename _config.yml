@@ -6,7 +6,7 @@ description: > # this means to ignore newlines until "baseurl:"
  Missed Mathematician, Tried To Be A Physicist And 
  Finally Settled As A Software Engineer
 baseurl: "/Balagangadhar.github.io" # the subpath of your site, e.g. /blog/
-url: "http://127.0.0.1:4000" # the base hostname & protocol for your site
+url: "https://github.com" # the base hostname & protocol for your site
 logourl: /assets/images/logo.png # Site logo
 author: "Bala Gangadhar"
 author_thumbnail: "/assets/images/avatar.jpg" # Author avatar
