@@ -1,0 +1,14 @@
+---
+layout: post
+title: 'Logging in Eclipse Birt '
+date: '2014-08-16T23:05:00.001-07:00'
+author: Balagangadhar Addanki
+tags:
+- eclipse
+- birt
+modified_time: '2014-08-21T11:56:59.900-07:00'
+blogger_id: tag:blogger.com,1999:blog-2232263284250046405.post-4812074009017087645
+blogger_orig_url: http://www.balasblog.com/2014/08/logging-in-eclipse-birt.html
+---
+
+Birt is one of the best open source projects that provides data visualization and reports for rich internet applications. But logging is one of the common problems while developing reports in BIRT report engine. Here is the small hack that I have used in <i>birt global script</i> to log my data.<br /><ul><li>Select <i>initialize </i>Script in birt(Select report, open report in Birt Report Design perspective select report and go to script tag, on the top of the screen, you can select initialize script).&nbsp;</li><li>Since Birt uses java logging, you can use following script in <i>initialize </i>script to log the message</li><pre></pre><pre></pre><pre><div><br />importPackage(Packages.java.lang);<br />function log(msg){<br />    System.out.println("Info : " + msg);<br />}<br />reportContext.setGlobalVariable("log", log)</div><br /></pre><pre></pre><li>Use <i>log</i>&nbsp;function in other scripts to log message.&nbsp;</li></ul><div>Note : If you cant find the console in eclipse, open eclipse in console mode. (To open eclipse in console mode, open eclipsec.exe instead of eclipse.exe).&nbsp;</div><div><br /></div><div>You can also use Log4j properties in birt reporting. <a href="http://wiki.eclipse.org/BIRT/FAQ/Deployment#Q%3a_Can_I_use_Log4j_with_BIRT.3F" target="_blank">Here is the detailed explanation. </a>&nbsp;&nbsp;</div>

@@ -1,0 +1,13 @@
+---
+layout: post
+title: ExtJS4 Dynamic Grid
+date: '2014-08-29T06:40:00.000-07:00'
+author: Balagangadhar Addanki
+tags:
+- extjs4
+modified_time: '2014-09-08T08:08:34.689-07:00'
+blogger_id: tag:blogger.com,1999:blog-2232263284250046405.post-3284621404783197194
+blogger_orig_url: http://www.balasblog.com/2014/08/extjs4-dynamic-grid.html
+---
+
+In the MV* patterns, model refers to the fixed state of content. If state changes then the benefit that comes out of this model is trivial. Some times it could be a case that model is dynamic, in such a case ExtJS grid should be constructed dynamically. Here is how the sample code goes...<br /><br />ExtJS4 grid has a method called <i>reconfigure</i>&nbsp;which takes store and columns as input arguments and restructures grid. These columns and store depends on the field data which a part of model. Since model is dynamic lets create field data dynamically along with the actual data and send it to the server.<br /><br /><br /><br /><script src="https://gist.github.com/Balagangadhar/64e1e86fa24664b414b4.js"></script> Here is the structure from server <script src="https://gist.github.com/Balagangadhar/7fe6eea81cfe0019e155.js"></script>

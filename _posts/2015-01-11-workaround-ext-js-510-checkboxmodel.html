@@ -1,0 +1,13 @@
+---
+layout: post
+title: 'Workaround : Ext JS 5.1.0 checkboxmodel ''deselect'' defect'
+date: '2015-01-11T22:17:00.002-08:00'
+author: Balagangadhar Addanki
+tags:
+- extjs5
+modified_time: '2015-01-11T22:17:56.031-08:00'
+blogger_id: tag:blogger.com,1999:blog-2232263284250046405.post-5638565641706670675
+blogger_orig_url: http://www.balasblog.com/2015/01/workaround-ext-js-510-checkboxmodel.html
+---
+
+ExtJS 5.1.0 is having a bug in checkboxmodel. While using checkbox model, it is not firing deselect/selection change when the model is 'MULTI' which is a default value.<br /><br />Use following snippet to make it work.<br /><br /><pre class="inline-example prettyprint prettyprinted" id="ext-gen2143" style="background-color: #f7f7f7; border-radius: 5px; border: 1px solid rgb(232, 232, 232); box-sizing: border-box; color: #314e64; font-family: Menlo, 'Courier New', Courier, monospace; font-size: 13px; line-height: 1.3em; margin-bottom: 14px; margin-top: 10px; max-width: 900px; overflow-x: auto; overflow-y: hidden; padding: 10px 12px;"><code id="ext-gen2144" style="box-sizing: border-box; font-family: Menlo, 'Courier New', Courier, monospace; font-style: inherit; font-weight: inherit; line-height: 13px; margin: 0px; padding: 0px;"><span class="pln" style="box-sizing: border-box; color: black;"> selModel</span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="pln" style="box-sizing: border-box; color: black;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box; color: black;"><br />          selType</span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="pln" style="box-sizing: border-box; color: black;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">'checkboxmodel'</span><span class="pln" style="box-sizing: border-box; color: black;">&nbsp;<br />          model : 'SIMPLE'<br /><br />}</span></code></pre>

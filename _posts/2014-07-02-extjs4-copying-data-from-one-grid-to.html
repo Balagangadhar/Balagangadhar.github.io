@@ -1,0 +1,13 @@
+---
+layout: post
+title: 'ExtJS4 : Copying data from one grid to another. '
+date: '2014-07-02T11:11:00.002-07:00'
+author: Balagangadhar Addanki
+tags:
+- extjs4
+modified_time: '2014-07-02T11:11:57.820-07:00'
+blogger_id: tag:blogger.com,1999:blog-2232263284250046405.post-262860596367685693
+blogger_orig_url: http://www.balasblog.com/2014/07/extjs4-copying-data-from-one-grid-to.html
+---
+
+Copying content into clipboard is a security hole. As a result no simple javascript method is available to write content into clipboard. Except IE, no other browser supports this without any plugins/flash. But if you just want to copy one row of grid and paste it into another grid you can use following hack.(Two grid stores should use same model).&nbsp;<div><br /></div><div><ul><li>Select a row and provice ExtJS context menu, in action get selected record. It will be in the form of model. Convert this model object into JSON object using <i>getData(true)</i> method on the model. It converts model object into json including association data.&nbsp;</li><li>Now your task is to persist this data in user's environment. For this you can use HTML5 web storage. It is simple, faster and secure. But it doesn't work on IE7 and earlier versions.</li></ul><i>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;localStorage.setItem("json-object", model.getData(true));</i><br /><ul><li>Above code stores model object into client's browser in the form of string.&nbsp;</li><li>When you wan to handle paste, fetch the stored data string and decode into JSON object.&nbsp;</li></ul>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i> var jsonObject = &nbsp;Ext.Deode(localStorage.getItem("json-object"));</i><br /><ul><li>After retrieving jsonObject convert this back in to model and push it into grid's store.&nbsp;</li></ul>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Check <a href="http://balu-learnings.blogspot.in/2014/07/extjs4-converting-json-object-into-model.html" target="_blank">this to convert jsonObject</a>&nbsp;into model.<br /><div><br /></div><div><br /></div></div>

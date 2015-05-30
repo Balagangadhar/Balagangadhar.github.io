@@ -1,0 +1,13 @@
+---
+layout: post
+title: 'Extjs 4 : Delegating Events'
+date: '2014-09-10T08:52:00.000-07:00'
+author: Balagangadhar Addanki
+tags:
+- extjs4
+modified_time: '2014-09-10T08:55:12.705-07:00'
+blogger_id: tag:blogger.com,1999:blog-2232263284250046405.post-7736455391951049984
+blogger_orig_url: http://www.balasblog.com/2014/09/extjs-4-delegating-events.html
+---
+
+Though ExtJS supports excellent event handling mechanism, sometimes we may want to handle custom events on some HTML components. For example if you want to handle hyperlink click whereas hyperlink is embedded in html code(using html tag or xtemplate), then you may need to delegate events to the component that you have created using 'delegate'. You can use simple hack to handle this.<br /><br /><ul><li>Create HTML text using html tag or xtemplate.&nbsp;</li><li>Assign classname/id to the component to which you want to attach an event.&nbsp;</li><li>Attache event to the Ext body and delegate to the specific class/id show in below.</li><li>Make sure that class name or id is unique.&nbsp;</li></ul><br />Here is the <a href="http://jsfiddle.net/Balagangadhar/qpL6e1c1/" target="_blank">fiddle </a>to fiddle around with it.<br />Sample snippet <br /><script src="https://gist.github.com/Balagangadhar/d7f5dfdfb0abd6f9c287.js"></script> 

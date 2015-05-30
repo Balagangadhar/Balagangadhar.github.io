@@ -1,0 +1,14 @@
+---
+layout: post
+title: 'Eclipse : Server Error  - Resource **** Does Exist'
+date: '2014-08-13T09:47:00.001-07:00'
+author: Balagangadhar Addanki
+tags:
+- eclipse
+modified_time: '2014-08-13T09:47:28.490-07:00'
+thumbnail: http://1.bp.blogspot.com/-G_HK5dk5-mQ/U-uUAQHyv9I/AAAAAAAAFlg/Eu4pSGmXFY0/s72-c/Eclipse-Error1.PNG
+blogger_id: tag:blogger.com,1999:blog-2232263284250046405.post-7098232241661911700
+blogger_orig_url: http://www.balasblog.com/2014/08/eclipse-server-error-resource-does-exist.html
+---
+
+Today I was trying to configure my development environment in newly released Eclipse version: LUNA. Suddenly I faced a &nbsp;problem in configuring server. I was just using simple tomcat which I had used it like hundred times. Only change I did was to modify small entry in some configuration file and then eclipse started crying. I tried many combinations, changed different tomcat servers and to test the tomcat server I moved into older eclipse. Finally I found that its a bug in eclipse. Its not with the new eclipse version but there with every eclipse version.<br /><br />Here is the error...<br /><span style="color: red;">Reason:</span><br /><span style="color: red;">Could not save because file has been modified since the start of editing eclipse</span><br /><span style="color: red;"><br /></span><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-G_HK5dk5-mQ/U-uUAQHyv9I/AAAAAAAAFlg/Eu4pSGmXFY0/s1600/Eclipse-Error1.PNG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-G_HK5dk5-mQ/U-uUAQHyv9I/AAAAAAAAFlg/Eu4pSGmXFY0/s1600/Eclipse-Error1.PNG" height="132" width="400" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-RecXZ20B5bw/U-uUAWSGmuI/AAAAAAAAFlk/f7VbO36UQL4/s1600/Eclipse-Error2.PNG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/-RecXZ20B5bw/U-uUAWSGmuI/AAAAAAAAFlk/f7VbO36UQL4/s1600/Eclipse-Error2.PNG" height="132" width="400" /></a></div><b><br /></b>Here is the solution to my problem. Its the name that has caused the problem. While naming the server I have used server location as the name of the server.<br /><br />I used server name as <b>'C:\NGPS\apache-tomcat-7.0.27'</b>&nbsp; and because of the back slashes in the name, it was failing to add new server. Moreover message that was throwing matched in my case and I ended up in doing permutations and combinations. Simple workaround for this problem is to change tomcat name to a simple string with alpha-numerics. Once you change the name, close 'Add new server window' and try to add it agian.<br /><br />

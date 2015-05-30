@@ -1,0 +1,14 @@
+---
+layout: post
+title: Spring MVC Test cases with Annotated Beans Using Mockito
+date: '2014-09-13T04:25:00.000-07:00'
+author: Balagangadhar Addanki
+tags:
+- spring
+- mockito
+modified_time: '2014-09-13T04:38:58.487-07:00'
+blogger_id: tag:blogger.com,1999:blog-2232263284250046405.post-6659411269304340458
+blogger_orig_url: http://www.balasblog.com/2014/09/spring-mvc-test-case-with-autowired.html
+---
+
+Annotations make java developer's life easy and also it feels like annotation based classes are complex for unit testing. But in reality it is quite simple. There are couple of ways through which you can test autowired/spring based classes.<br /><br /><b>Method 1:</b><br />You can use AnnotationConfigApplicationContext to load application context. Instantiate application context, register annotated classes and test your methods. Here is the sample code<br /><br /><script src="https://gist.github.com/Balagangadhar/c54cd35f08059c6dda56.js"></script> <b>Method 2:</b> <br />Even though preceding method is an easiest way to test annotation based spring classes, if your test case becomes complex and if you want to mock actual request etc, you better move to mocking framework instead of basic one. I have used mockito with spring-test to mock actual requests with spring beans. Here is the sample code<br /><br /><script src="https://gist.github.com/Balagangadhar/a7a6aef7a5bf34cd931d.js"></script> In the above sample code we have used spy to mock real objects, if you just want to mock it you can use mock annotation instead of spy.<br /><br />For this you need mockito and spring-test jars. Following are the minimal poms for the both respectively.<br />&nbsp; &nbsp; &nbsp;<i>&lt;dependency&gt;</i><br /><i>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;groupId&gt;org.mockito&lt;/groupId&gt;</i><br /><i>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;artifactId&gt;mockito-core&lt;/artifactId&gt;</i><br /><i>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;version&gt;1.9.5&lt;/version&gt;</i><br /><i>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;scope&gt;test&lt;/scope&gt;</i><br /><i>&nbsp; &lt;/dependency&gt;</i><br /><i>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dependency&gt;</i><br /><i>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;groupId&gt;org.springframework&lt;/groupId&gt;</i><br /><i>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;artifactId&gt;spring-test&lt;/artifactId&gt;</i><br /><i>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;version&gt;4.0.0.RELEASE&lt;/version&gt;</i><br /><i>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;scope&gt;test&lt;/scope&gt;</i><br /><i>&nbsp; &lt;/dependency&gt;</i><br /><i><br /></i>Here is the complete code with both the testing methodologies.<br /><a href="https://github.com/Balagangadhar/templates/tree/master/spring-test-template" target="_blank">spring-test-template using mockito</a><br /><div><br /></div>

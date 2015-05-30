@@ -1,0 +1,13 @@
+---
+layout: post
+title: 'Extjs4 : Converting JSON Object into model '
+date: '2014-07-02T10:45:00.001-07:00'
+author: Balagangadhar Addanki
+tags:
+- extjs4
+modified_time: '2014-09-08T08:15:15.101-07:00'
+blogger_id: tag:blogger.com,1999:blog-2232263284250046405.post-6072243424148465204
+blogger_orig_url: http://www.balasblog.com/2014/07/extjs4-converting-json-object-into-model.html
+---
+
+ExtJS provides getData(true) method on model to convert model object into JSON Object including associations. But other way is not a straight forward thing in ExtJS4. If you have JSON and want to convert into model, one dirty way could be create a store with memory proxy, input JSON object as data object and access first record in the store. But this method is not always fruitful. If your JSON has associated data, this method will not work properly. Especially in case of hasOne association case, it never creates *HasOneInstance objects using this method.<br /><br />I found similar API in <a href="http://docs-origin.sencha.com/touch/2.2.1/source/Model.html#Ext-data-Model-method-setData" target="_blank">Sencha touch 2.2.1</a> and modified a bit to make it work in ExtJS 4.2.1<br /><br /><ul><li>Write following functions in ExtJS model.</li><li>Create a model and use setData(JSON Object)</li><li>It returns model with populated data along with the hasMany, hasOne associations.&nbsp;</li><script src="https://gist.github.com/Balagangadhar/76e6664224ec1ec9593a.js"></script>Source can be found&nbsp;@<a href="https://github.com/Balagangadhar/ExtJS4-Misc/blob/master/ExtJS4JsonObjectToModel.js">https://github.com/Balagangadhar/ExtJS4-Misc/blob/master/ExtJS4JsonObjectToModel.js</a><br /><br /><br /></ul>
